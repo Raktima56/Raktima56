@@ -239,4 +239,125 @@ Example:
 Input: "applepenapple", ["apple", "pen"]
 Output: true
 These questions cover various aspects of string manipulation, such as substring generation, permutations, rotations, and complex problems like the word break and longest palindromic substring.
+
+
+
+
+##########################################################################################################################################################################################################################################################################################################################################################
+
+Here are ten intermediate-level Java exercises focusing on inheritance. These exercises cover key inheritance concepts like method overriding, polymorphism, access modifiers, constructors, and more.
+
+
+---
+
+1. Bank Account Management System
+
+Create a base class BankAccount with attributes like accountNumber and balance, and methods for deposit and withdraw.
+
+Then, create subclasses SavingsAccount and CheckingAccount that inherit from BankAccount. Add unique features:
+
+SavingsAccount: a method for adding interest.
+
+CheckingAccount: a limit for overdraft.
+
+
+Test each subclass's methods and check balance updates.
+
+
+---
+2. Shape Area Calculator
+
+Create an abstract class Shape with an abstract method calculateArea().
+
+Then, create subclasses Circle, Rectangle, and Triangle, each implementing calculateArea() based on their specific formulas. Add necessary attributes (e.g., radius for Circle, length and width for Rectangle).
+
+Write a main method to calculate and display the area of different shapes.
+
+
+---
+
+3. Employee Management System
+
+Create a base class Employee with attributes like name, id, and salary.
+
+Create subclasses Manager and Developer, both inheriting from Employee. Add specific methods:
+
+Manager: a method to conductMeeting.
+
+Developer: a method to writeCode.
+
+
+Override the toString() method in each class to print out employee details. Instantiate objects to demonstrate each subclass’s unique behaviors.
+
+
+---
+
+4. Library Management System
+
+Create a base class Book with attributes like title and author. Add methods like borrowBook and returnBook.
+
+Create subclasses Ebook and Paperback, each with a unique feature:
+
+Ebook: a method to download.
+
+Paperback: a method to markAsDamaged.
+
+
+Demonstrate polymorphism by calling borrowBook and returnBook methods on both types of books.
+
+
+---
+5. Vehicle Inheritance Hierarchy
+
+Define a base class Vehicle with attributes like speed and fuelCapacity and methods like startEngine and stopEngine.
+
+Create subclasses Car and Bike, each with a unique behavior:
+
+Car: a method to playRadio.
+
+Bike: a method to doWheelie.
+
+
+Use polymorphism to call methods and display the properties of each vehicle.
+
+
+---
+6. School System
+
+Define a base class Person with common attributes such as name and age. Add a method getInfo() to display basic information.
+
+Create subclasses Student and Teacher. Add specific attributes:
+
+Student: gradeLevel, enrollInCourse().
+
+Teacher: subject, teachCourse().
+
+
+Instantiate objects of both subclasses and display their unique properties and behaviors.
+
+
+---
+7. Animal Sound Simulator
+
+Create an abstract class Animal with an abstract method makeSound().
+
+Then, create subclasses Dog, Cat, and Cow, each implementing makeSound() differently.
+
+Create a method testAnimalSound() that takes an Animal object as a parameter and calls makeSound(). Test this method with different subclasses.
+
+
+---
+
+8. Library Membership
+
+Create a base class Member with attributes like memberID, name, and borrowedBooks.
+
+Create subclasses StudentMember and TeacherMember, each with unique rules:
+
+StudentMember: maximum of 3 borrowed books.
+
+TeacherMember: maximum of 5 borrowed books.
+
+
+Add a method borrowBook() in each subclass to enforce borrowing limits.
  
