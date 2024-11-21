@@ -1,0 +1,279 @@
+﻿End Points,Category,HTTP Methods,Description,Success Response,Error Response
+/api/v1/customers,customers,GET,Fetch all customers,"
+  Collection
+  of Customers
+  ","• HTTP Status Code: 500 Internal Server Error
+• Body: ""An internal server error occurred while fetching customers."""
+/api/v1/customers,customers,POST,Add new Customer object in DB,"
+  String: Record Created Successfully
+  ","• HTTP Status Code: 400 Bad Request
+• Body: ""Invalid request. Please provide valid customer data."""
+/api/v1/customers,customers,PUT,Update customer by object,"
+  String: Record Updated Successfully
+  ","• HTTP Status Code: 400 Bad Request
+• Body: ""Invalid request. Please provide valid customer data for updating."""
+/api/v1/customers/{customerId),customers,DELETE,Delete customer by object,"
+  String: Record deleted Successfully
+  ","• HTTP Status Code: 400 Bad Request
+• Body: ""Invalid request. Please provide valid customer ID for deletion."""
+/api/v1/customers/{emailId},customers,GET,Search Customers Matching emailid,"
+  Collection of Customers
+  ","• HTTP Status Code: 404 Not Found
+• Body: ""Customer with the provided email ID not found."""
+/api/v1/customers/{name},customers,GET,Search Customers Matching name wildcard,"
+  Collection of Customers
+  ","• HTTP Status Code: 404 Not Found
+• Body: ""Customer with the provided name wildcard not found."""
+/api/v1/customers/shipment/status,customers,GET,Shipment status wise count of customers,"
+  Custom Object of Shipment Status
+  and count of customers
+  ","• HTTP Status Code: 500 Internal Server Error
+• Body: ""An internal server error occurred while fetching shipment status count."""
+/api/v1/customers/{custId}/order,customers,GET,Fetch orders for the respective customer by id,"
+  Custom object of customer with
+  list of Order(s)
+  ","• HTTP Status Code: 404 Not Found
+• Body: ""Orders for the specified customer ID not found."""
+/api/v1/customers/{custId}/shipment,customers,GET,Fetch shipment history for the respective customer by id,"
+  Custom object of customer with
+  list of shipment(s)
+  ","• HTTP Status Code: 404 Not Found
+• Body: ""Shipment history for the specified customer ID not found."""
+/api/v1/customers/shipments/pending,customers,GET,Retrieve customers with pending shipments,"Collection of Customers with pending shipments
+  ","• HTTP Status Code: 500 Internal Server Error
+• Body: ""An internal server error occurred while fetching customers with pending shipments."""
+/api/v1/customers/orders/completed,customers,GET,Retrieve customers with completed orders,"
+Collection of Customers with completed orders
+  ","• HTTP Status Code: 500 Internal Server Error
+• Body: ""An internal server error occurred while fetching customers with completed orders."""
+/api/v1/customers/shipments/overdue,customers,GET,Retrieve customers with overdue shipments,"Collection of Customers with overdue shipments
+  ","• HTTP Status Code: 500 Internal Server Error
+• Body: ""An internal server error occurred while fetching customers with overdue shipments."""
+/api/v1/customers/orders/quantity/{min}/{max},customers,GET,Retrieve customers with order quantities within a specified range,"
+Collection of Customers with order quantities in the specified range
+  ","• HTTP Status Code: 400 Bad Request
+• Body: ""Invalid request. Please provide valid minimum and maximum quantities for orders."""
+"/api/v1/products
+  ",Products,GET,"
+  Fetch
+  all products
+  ","
+  Collection
+  of products
+  ","• HTTP Status Code: 500 Internal Server Error
+• Body: ""An internal server error occurred while fetching all products."""
+"/api/v1/products
+  ",Products,POST,"
+  Add new product object in DB
+  ","
+  String: Record Created Successfully
+  ","• HTTP Status Code: 400 Bad Request
+• Body: ""Invalid request. Please provide valid product data for creation."""
+"/api/v1/products
+  ",Products,PUT,"
+  Update products by object
+  ","
+  String: Record Updated Successfully
+  ","• HTTP Status Code: 400 Bad Request
+• Body: ""Invalid request. Please provide valid product data for updating."""
+"/api/v1/products /{id}
+  ",Products,DELETE,"
+  Delete product
+  ","
+  String: Record deleted Successfully
+  ","• HTTP Status Code: 404 Not Found
+• Body: ""Product with the specified ID not found for deletion."""
+"/api/v1/products /{productname}
+  ",Products,GET,"
+  Search Products Matching product
+  name
+  ","
+  Collection of Products
+  ","• HTTP Status Code: 404 Not Found
+• Body: ""Product(s) with the specified name not found."""
+"/api/v1/products/brand/{brand}
+  ",Products,GET,"Retrieve products based on a specific brand
+  ","Collection of Products for the specified brand  ","• HTTP Status Code: 404 Not Found
+• Body: ""Products with the specified brand not found."""
+"/api/v1/products/colour/{colour}
+  ",Products,GET,"
+Retrieve products based on a specific colour
+  ","
+  Collection of Products for the specified colour
+  ","• HTTP Status Code: 404 Not Found
+• Body: ""Products with the specified color not found."""
+"/api/v1/products /unitprice?min=value&max=value
+  ",Products,GET,"
+  Fetch List of Products matching
+  between min and max unit price
+  ","
+  Collection of Products
+  ","• HTTP Status Code: 400 Bad Request
+• Body: ""Invalid request. Please provide valid minimum and maximum unit prices."""
+" /api/v1/products/sort?field=value
+  ",Products,GET,"
+  Get list of products order by
+  query field
+  ","
+  Collection of Product Object
+  ordered by query field
+  ","• HTTP Status Code: 400 Bad Request
+• Body: ""Invalid request. Please provide a valid field for sorting."""
+"/api/v1/orders
+  ",Orders,GET,"
+  Fetch
+  all orders
+  ","
+  Collection
+  of Orders
+  ","• HTTP Status Code: 500 Internal Server Error
+• Body: ""An internal server error occurred while fetching all orders."""
+"/api/v1/orders
+  ",Orders,POST,"
+  Create new Order object in DB
+  ","
+  String: Record Created Successfully
+  ","• HTTP Status Code: 400 Bad Request
+• Body: ""Invalid request. Please provide valid order data for creation."""
+"/api/v1/orders
+  ",Orders,PUT,"
+  Update Order by object
+  ","
+  String: Record Updated Successfully
+  ","• HTTP Status Code: 400 Bad Request
+• Body: ""Invalid request. Please provide valid order data for updating."""
+"/api/v1/orders/{id}
+  ",Orders,DELETE,"
+  Delete Order
+  ","
+  String: Record deleted Successfully
+  ","• HTTP Status Code: 404 Not Found
+• Body: ""Order with the specified ID not found for deletion."""
+"/api/v1/orders/status
+  ",Orders,GET,"
+  Count of orders by status
+  ","
+  Custom Object for status of order and count
+  ","• HTTP Status Code: 500 Internal Server Error
+• Body: ""An internal server error occurred while fetching the count of orders by status."""
+"/api/v1/orders/{store}
+  ",Orders,GET,"
+  Fetch order details matching
+  storename
+  ","
+  Object of Order having orderid,
+  orderstatus, storename and webaddress
+  ","• HTTP Status Code: 404 Not Found
+• Body: ""Orders with the specified store name not found."""
+"/api/v1/orders/{id}
+  ",Orders,GET,"
+  Fetch details of a specific order by      its ID.
+  ","
+  Order details.
+  ","• HTTP Status Code: 404 Not Found
+• Body: ""Order with the specified ID not found."""
+"/api/v1/orders/customer/{customerId}
+  ",Orders,GET,"
+  Retrieve a list of orders placed by a specific customer.
+  ","
+ List of orders.
+  ","• HTTP Status Code: 404 Not Found
+• Body: ""Orders for the specified customer ID not found."""
+"/api/v1/orders/{id}/cancel
+  ",Orders,GET,"
+  Mark an order as canceled.
+  ","
+Success message.
+  ","• HTTP Status Code: 404 Not Found
+• Body: ""Order with the specified ID not found for cancellation."""
+"/api/v1/orders/{orderId}
+  ",Orders,GET,"
+Retrieve order details by ID
+  ","
+Order details (Single Order)
+  ","• HTTP Status Code: 404 Not Found
+• Body: ""Order with the specified order ID not found."""
+"/api/v1/orders/status/{status}
+  ",Orders,GET,"
+ Retrieve orders based on a specific status.
+  ","
+Collection of Orders with the specified status
+  ","• HTTP Status Code: 404 Not Found
+• Body: ""Orders with the specified status not found."""
+"/api/v1/orders/date/{startDate}/{endDate}
+  ",Orders,GET,"
+ Retrieve orders placed within the specified date range
+  ","
+Collection of Orders placed within the specified date range
+  ","• HTTP Status Code: 404 Not Found
+• Body: ""Orders within the specified date range not found."""
+"/api/v1/orders/customer/{email}
+  ",Orders,GET,"
+  Retrieve orders associated with a specific customer's email
+  ","
+Collection of Orders associated with the specified customer email
+  ","• HTTP Status Code: 404 Not Found
+• Body: ""Orders for the specified customer email not found."""
+,Orders,,,,
+"/api/v1/inventory
+  ",Inventory,GET,"
+  Fetch
+  all inventory records
+  ","
+  Custom
+  Object of Inventory records
+  ","• HTTP Status Code: 500 Internal Server Error
+• Body: ""An internal server error occurred while fetching all inventory records."""
+" /api/v1/inventory?storeid=value
+  ",Inventory,GET,"
+  Fetch productdata, storedata, orderstatus matching storied
+  ","
+  Custom Object Of inventory contains product, store and
+  order details
+  ","• HTTP Status Code: 404 Not Found
+• Body: ""Inventory records matching the specified store ID not found."""
+"/api/v1/inventory/shipment
+  ",Inventory,GET,"
+  Fetch inventories and matching shipments
+  ","
+  Collection of Inventory records matching shipments
+  ","• HTTP Status Code: 500 Internal Server Error
+• Body: ""An internal server error occurred while fetching inventory records matching shipments."""
+"/api/v1/inventory/{orderid}
+  ",Inventory,GET,"
+  Fetch store, product and customer data matching order id
+  ","
+  Custom Object to return product, customer and store
+  details matching ordered
+  ","• HTTP Status Code: 404 Not Found
+• Body: ""Store, product, and customer data for the specified order ID not found."""
+"/api/v1/inventory/shipment
+  ",Inventory,GET,"
+  Count shipment status wise count
+  of total products sold
+  ","
+  Custom Object of Inventory to print shipment status and count
+  of sold products
+  ","• HTTP Status Code: 500 Internal Server Error
+• Body: ""An internal server error occurred while fetching the count of shipment status and sold products."""
+"/api/v1/inventory/{orderid}/details
+  ",Inventory,GET,"
+  Fetch list of Products in a order matching ordered with
+  store details, shipment status and total amount
+  ","
+  Custom List of object for inventory details 
+  ","Body: ""List of products in the specified order ID not found with store details, shipment status, and total amount."""
+"/api/v1/inventory/product/{productId}/store/{storeId}
+  ",Inventory,GET,"
+Retrieve inventory records for a specific product and store
+  ","
+ Custom Object of Inventory records
+  ","• HTTP Status Code: 404 Not Found
+• Body: ""Inventory records for the specified product and store not found."""
+"/api/v1/inventory/category/{category}
+  ",Inventory,GET,"
+  Retrieve inventory records for products in a specific category
+  ","
+Custom Object of Inventory records for the specified category
+  ","• HTTP Status Code: 404 Not Found
+• Body: ""Inventory records for the specified category not found."""
